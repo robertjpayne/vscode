@@ -181,16 +181,7 @@ export class ViewController {
 		} else {
 			if (this._hasMulticursorModifier(data)) {
 				if (!this._hasNonMulticursorModifier(data)) {
-					if (data.shiftKey) {
-						this._columnSelect(data.position, data.mouseColumn, true);
-					} else {
-						// Do multi-cursor operations only when purely alt is pressed
-						if (data.inSelectionMode) {
-							this._lastCursorMoveToSelect(data.position, data.revealType);
-						} else {
-							this._createCursor(data.position, false);
-						}
-					}
+					this._columnSelect(data.position, data.mouseColumn, true);
 				}
 			} else {
 				if (data.inSelectionMode) {
